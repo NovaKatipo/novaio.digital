@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300&display=swap" rel="stylesheet"/>
 
     <style>
-        /* BASE THEME */
+        /* THE THEME */
         body { 
             background-color: #050505; 
             color: #ffffff; 
@@ -20,11 +20,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* CURSOR MONOGRAM: The Red 'N' Cursor */
+            /* MONOGRAM CURSOR: The Red 'N' */
             cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><text y='20' font-size='20' fill='red' font-family='serif' font-weight='bold'>N</text></svg>"), auto;
         }
 
-        /* ANTI-GRAVITY: Hover/Touch effect for the text */
+        /* ANTI-GRAVITY EFFECT */
         .anti-gravity {
             transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.5s ease;
             display: inline-block;
@@ -36,122 +36,8 @@
             color: #ff0000;
         }
 
-        /* THE KATIPO (SPIDER): CSS construction */
+        /* THE KATIPO (SPIDER) */
         #katipo {
             position: absolute;
             width: 40px;
-            height: 46px;
-            background: #000;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 0, 0, 0.3);
-            transition: all 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-            top: 25%;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 20px rgba(0,0,
-        } 50% {
-        border-color: rgba(230, 195, 92, 0.6);
-        box-shadow: 0 0 30px rgba(230, 195, 92, 0.2);
-        }
-    }
-/* Ngā Hau e Whā (The Four Winds) Drift Animation */
-@keyframes drift {
-    0% {
-        transform: translateX(-5%) translateY(0) scale(1);
-        } 50% {
-        transform: translateX(5%) translateY(-1%) scale(1.02);
-        } 100% {
-        transform: translateX(-5%) translateY(0) scale(1);
-        }
-    }
-.animate-pulse-gold {
-    animation: pulse-gold 4s ease-in-out infinite
-    }
-.animate-drift {
-    animation: drift 30s ease-in-out infinite
-    }
-/* Custom Background Sizing */
-.paua-bg {
-    background-image: url({{DATA:IMAGE:IMAGE_2}});
-    background-size: cover;
-    background-position: center
-    }
-/* Input focus overrides */
-.gatekeeper-input:focus {
-    outline: none;
-    border-color: #E6C35C;
-    --tw-ring-color: #E6C35C
-    }
-.anti-gravity {
-  transition: transform 0.8s ease-out;
-}
-.anti-gravity:hover {
-  transform: translateY(-20px) scale(1.02);
-  text-shadow: 0 20px 30px rgba(212, 175, 55, 0.3);
-}</style>
-</head>
-<body class="bg-black text-white font-sans overflow-hidden">
-<!-- BEGIN: Background Layer -->
-<div class="fixed inset-0 z-0 paua-bg" data-purpose="paua-shell-background"></div>
-<!-- END: Background Layer -->
-<!-- BEGIN: The Four Winds (Drifting SVG) -->
-<div class="fixed inset-0 z-10 pointer-events-none opacity-20 overflow-hidden" data-purpose="drifting-elements">
-<svg class="w-[200%] h-full animate-drift" viewbox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-<path d="M0,500 C200,400 300,600 500,500 C700,400 800,600 1000,500" fill="transparent" stroke="rgba(230, 195, 92, 0.4)" stroke-width="0.5"></path>
-<path d="M0,600 C200,500 300,700 500,600 C700,500 800,700 1000,600" fill="transparent" stroke="rgba(230, 195, 92, 0.2)" stroke-width="1"></path>
-</svg>
-</div>
-<!-- END: The Four Winds -->
-<!-- BEGIN: Gatekeeper Overlay -->
-<main class="fixed inset-0 z-20 flex flex-col items-center justify-center backdrop-blur-[40px] px-6 bg-black/80" data-purpose="gatekeeper-interface">
-<!-- Branding -->
-<nav class="absolute top-10 left-10 border-t-2 border-hohaia-gold/40 pt-2" data-purpose="header-branding">
-<h1 class="font-serif text-xl tracking-[0.6em] uppercase text-hohaia-gold opacity-80">novaio.digital</h1>
-</nav>
-<!-- Passcode Interface Container -->
-<section class="max-w-md w-full text-center space-y-12" data-purpose="access-form">
-<!-- Heading & Cultural Context -->
-<div class="space-y-4">
-<h2 class="font-serif text-4xl md:text-5xl tracking-[0.3em] text-hohaia-gold uppercase font-light anti-gravity">Whānau Access Only</h2>
-<p class="font-serif italic text-hohaia-gold/70 text-xl tracking-[0.2em] mt-2">ux + ui design</p>
-</div>
-<!-- Passcode Input with Te Hā Pulse -->
-<div class="relative p-8 border border-hohaia-gold/20 rounded-sm animate-pulse-gold bg-black/40 backdrop-blur-md border-hohaia-gold/10">
-<label class="block text-xs uppercase tracking-widest text-hohaia-gold/50 mb-6" for="passcode">Enter Passcode</label>
-<div class="flex flex-col items-center gap-6">
-<input class="gatekeeper-input w-full bg-deep-black/60 border-hohaia-gold/40 text-hohaia-gold text-center py-4 rounded-md font-sans text-xl tracking-widest transition-all duration-500" id="passcode" placeholder="••••••••" type="password"/>
-<button class="px-12 py-3 bg-hohaia-gold text-black font-serif uppercase tracking-[0.3em] text-xs hover:bg-white transition-all duration-500 rounded-sm shadow-lg shadow-hohaia-gold/10" type="button">
-            Enter
-          </button>
-</div>
-</div>
-<!-- Footer / Contact Hint -->
-<div class="pt-10">
-<p class="text-xs tracking-widest text-white/30 uppercase">
-          Lost your key? Reach out to the Hohaia archive.
-        </p>
-</div>
-</section>
-</main>
-<!-- END: Gatekeeper Overlay -->
-<!-- BEGIN: Simple Interaction Script -->
-<script data-purpose="event-handlers">
-    // Simple logic to handle input focus styles and placeholder
-    const input = document.getElementById('passcode');
-    input.addEventListener('focus', () => {
-      input.placeholder = '';
-    });
-    input.addEventListener('blur', () => {
-      if (!input.value) input.placeholder = '••••••••';
-    });
-        const button = document.querySelector('button');
-    button.addEventListener('click', () => {
-        if (input.value === '1979') {
-            window.location.href = 'main.html';
-        } else {
-            alert('Access Denied: Hohaia Archive Restricted');
-        }
-    });
-  </script>
-<!-- END: Simple Interaction Script -->
-</body></html>
+            height:
