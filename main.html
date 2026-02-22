@@ -1,39 +1,74 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Katarina Hohaia | Whakapapa Vault</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #050505; color: #ffffff; overflow-x: hidden; }
+        
+        /* The Foundation: Paua Shell Background */
+        .paua-bg {
+            background-image: url('assets/paua.png');
+            background-size: cover;
+            background-position: center;
+            mix-blend-mode: soft-light;
+            opacity: 0.15;
+        }
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Katarina Hohaia | Ngāpuhi • Ngāti Raukawa</title>
-<!-- Tailwind CSS CDN with Plugins -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Google Fonts: Serif for titles, Sans for body -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['Playfair Display', 'serif'],
-            sans: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            gold: {
-              light: '#F5E6BE',
-              DEFAULT: '#D4AF37',
-              dark: '#996515',
-            }
-          },
-          animation: {
-            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'float': 'float 20s linear infinite',
-          },
-          keyframes: {
-            float: {
-              '0%': { transform: 'translateX(-100%) translateY(0) rotate(0deg)', opacity: '0' },
-              '10%': { opacity: '0.3' },
-              '90%': { opacity: '0.3' },
+        /* Anti-Gravity: The Floating Effect */
+        .anti-gravity {
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            cursor: pointer;
+        }
+        .anti-gravity:hover {
+            transform: translateY(-25px) scale(1.03);
+            text-shadow: 0 20px 40px rgba(230, 195, 92, 0.4);
+        }
+
+        /* Te Hā (The Breath) Pulse */
+        @keyframes pulse-gold {
+            0%, 100% { border-color: rgba(230, 195, 92, 0.2); box-shadow: 0 0 10px rgba(230, 195, 92, 0.05); }
+            50% { border-color: rgba(230, 195, 92, 0.7); box-shadow: 0 0 30px rgba(230, 195, 92, 0.3); }
+        }
+        .animate-te-ha { animation: pulse-gold 5s ease-in-out infinite; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <div class="fixed inset-0 z-0 paua-bg"></div>
+
+    <header class="relative z-50 flex justify-between items-center px-8 py-10">
+        <h1 class="font-serif text-2xl tracking-[0.5em] text-gold uppercase anti-gravity">novaio.digital</h1>
+        <img src="assets/pattern.png" class="h-10 opacity-60" alt="Kowhaiwhai">
+    </header>
+
+    <main class="relative z-10 flex flex-col items-center pt-20">
+        <section class="max-w-4xl w-full border border-white/10 rounded-3xl p-16 animate-te-ha bg-black/60 backdrop-blur-xl text-center">
+            <h2 class="font-serif text-6xl mb-6 anti-gravity">Katarina Hohaia</h2>
+            <p class="text-gold/80 tracking-[0.4em] uppercase text-sm mb-12">Ngāpuhi • Ngāti Raukawa</p>
+            
+            <div class="grid md:grid-cols-2 gap-10 pt-10 border-t border-white/5">
+                <div>
+                    <h3 class="text-xs uppercase tracking-widest text-gold/40 mb-4">Iwi Foundation</h3>
+                    <p class="italic text-lg text-gray-400">Te Whare Tapu o Ngāpuhi</p>
+                </div>
+                <div>
+                    <h3 class="text-xs uppercase tracking-widest text-gold/40 mb-4">Hapū Connection</h3>
+                    <p class="italic text-lg text-gray-400">Te Haerenga Whakamua</p>
+                </div>
+            </div>
+        </section>
+
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                class="fixed bottom-10 right-10 z-50 anti-gravity opacity-50 hover:opacity-100">
+            <img src="assets/hapaitia.png" class="w-12 h-12" alt="Lift Up">
+        </button>
+    </main>
+
+</body>
+</html>
               '100%': { transform: 'translateX(200%) translateY(-20px) rotate(5deg)', opacity: '0' },
             }
           }
