@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
     <title>novaio.digital | tinkering</title>
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22red%22 font-family=%22serif%22 font-weight=%22bold%22>N</text></svg>">
@@ -11,33 +11,101 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300&display=swap" rel="stylesheet"/>
 
     <style>
-        /* THE THEME */
         body { 
             background-color: #050505; 
             color: #ffffff; 
             overflow: hidden; 
-            min-height: 100vh;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            /* MONOGRAM CURSOR: The Red 'N' */
+            /* MONOGRAM CURSOR */
             cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><text y='20' font-size='20' fill='red' font-family='serif' font-weight='bold'>N</text></svg>"), auto;
+            touch-action: manipulation; /* Optimizes for mobile tapping */
         }
 
-        /* ANTI-GRAVITY EFFECT */
+        /* MOBILE PATCH: Ensures text doesn't hide off-screen */
+        .container-box {
+            position: relative;
+            z-index: 5;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
         .anti-gravity {
             transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.5s ease;
             display: inline-block;
             cursor: pointer;
-        }
-        .anti-gravity:hover {
-            transform: translateY(-40px) scale(1.05) rotate(-2deg);
-            text-shadow: 0 20px 50px rgba(255, 0, 0, 0.6);
-            color: #ff0000;
+            user-select: none;
         }
 
-        /* THE KATIPO (SPIDER) */
+        /* KATIPO SPIDER */
         #katipo {
             position: absolute;
             width: 40px;
-            height:
+            height: 46px;
+            background: #000;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+            z-index: 10;
+            pointer-events: none; /* Allows you to click "through" the spider */
+        }
+
+        #katipo::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px; height: 20px;
+            background: #ff0000;
+            clip-path: polygon(50% 0%, 100% 30%, 100% 70%, 50% 100%, 0% 70%, 0% 30%);
+            animation: te-ha-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes te-ha-pulse {
+            0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); filter: blur(1px); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.3); filter: blur(0px); box-shadow: 0 0 15px #ff0000; }
+        }
+
+        .letter-spacing-custom { letter-spacing: 0.3em; }
+        @media (min-width: 768px) { .letter-spacing-custom { letter-spacing: 0.6em; } }
+    </style>
+</head>
+<body onclick="moveSpider(event)">
+
+    <div id="katipo" style="top: 20%; left: 50%; transform: translateX(-50%);"></div>
+
+    <div class="container-box">
+        <h1 class="font-serif text-4xl md:text-7xl uppercase anti-gravity letter-spacing-custom">
+            novaio.digital
+        </h1>
+        <p class="font-sans text-red-600 tracking-[1em] text-[10px] md:text-sm uppercase opacity-50 mt-4">
+            'chout!
+        </p>
+    </div>
+
+    <script>
+        function moveSpider(e) {
+            const spider = document.getElementById('katipo');
+            // Move spider to where you tapped/clicked
+            const x = e.clientX || e.touches[0].clientX;
+            const y = e.clientY || e.touches[0].clientY;
+            
+            // Random offset so it doesn't land exactly under your finger
+            const offsetX = (Math.random() - 0.5) * 100;
+            const offsetY = (Math.random() - 0.5) * 100;
+            
+            const randomRotation = Math.floor(Math.random() * 360);
+            
+            spider.style.left = (x + offsetX) + 'px';
+            spider.style.top = (y + offsetY) + 'px';
+            spider.style.transform = `rotate(${randomRotation}deg)`;
+        }
+    </script>
+</body>
+</html>
