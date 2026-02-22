@@ -129,6 +129,14 @@
     input.addEventListener('blur', () => {
       if (!input.value) input.placeholder = '••••••••';
     });
+        const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+        if (input.value === '1979') {
+            window.location.href = 'main.html';
+        } else {
+            alert('Access Denied: Hohaia Archive Restricted');
+        }
+    });
   </script>
 <!-- END: Simple Interaction Script -->
 </body></html>
