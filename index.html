@@ -1,39 +1,54 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>novaio.digital | tinkering</title>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Hohaia | Whānau Access</title>
-<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Google Fonts: Serif for luxury/cultural feel -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
-<script data-purpose="tailwind-config">
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'hohaia-gold': '#E6C35C',
-            'deep-black': '#050505',
-          },
-          fontFamily: {
-            serif: ['"Playfair Display"', 'serif'],
-            sans: ['Inter', 'sans-serif'],
-          },
-          letterSpacing: {
-            'gatekeeper': '0.4em',
-          }
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22red%22 font-family=%22serif%22 font-weight=%22bold%22>N</text></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300&display=swap" rel="stylesheet"/>
+
+    <style>
+        /* BASE THEME */
+        body { 
+            background-color: #050505; 
+            color: #ffffff; 
+            overflow: hidden; 
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* CURSOR MONOGRAM: The Red 'N' Cursor */
+            cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><text y='20' font-size='20' fill='red' font-family='serif' font-weight='bold'>N</text></svg>"), auto;
         }
-      }
-    }
-  </script>
-<style data-purpose="animations">/* Te Hā (The Breath) Pulse Animation */
-@keyframes pulse-gold {
-    0%, 100% {
-        border-color: rgba(230, 195, 92, 0.2);
-        box-shadow: 0 0 15px rgba(230, 195, 92, 0.05);
+
+        /* ANTI-GRAVITY: Hover/Touch effect for the text */
+        .anti-gravity {
+            transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.5s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .anti-gravity:hover {
+            transform: translateY(-40px) scale(1.05) rotate(-2deg);
+            text-shadow: 0 20px 50px rgba(255, 0, 0, 0.6);
+            color: #ff0000;
+        }
+
+        /* THE KATIPO (SPIDER): CSS construction */
+        #katipo {
+            position: absolute;
+            width: 40px;
+            height: 46px;
+            background: #000;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            transition: all 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            top: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(0,0,
         } 50% {
         border-color: rgba(230, 195, 92, 0.6);
         box-shadow: 0 0 30px rgba(230, 195, 92, 0.2);
