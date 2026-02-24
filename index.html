@@ -1,362 +1,132 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>novaio.digital | High-End UX + UI</title>
-<!-- Tailwind CSS v3 with Plugins -->
+<title>Katipo Gatekeeper | novaio.digital</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Google Fonts: Bold Architectural Sans-Serif (Syne / Inter) -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Inter:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
-<style data-purpose="typography">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#0a0503",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.kowhaiwhai-pattern {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCjh1-IZy_hOX59CFlyIxq4XLLNnT8cseOFCkQ3lkGmOkcwffbThL4xK9P6_EUW_fgSVUL3ow2XzPjFd-UVajeeb_rzrMXiJlpcuLug6JQDWoJwYuEOBl11RDEEtnwsVDdbpNGIYxt928v-RF7Puxt3idD1sKteKhsoT0ic-TGAKMNrqEtyRqPoT5o-DJRYbkXEXMgRD5mjuNOhH-3-aoxKkbnm977T3ZHMuzXMqDFaAMANzitmYYh1NDUW_jSNp0MYhI23SZx6JT4);
+    opacity: 0.05
+    }
+.spider-glow {
+    box-shadow: 0 0 40px 10px rgba(236, 91, 19, 0.2)
+    }</style>
+<style>
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #000000;
-      color: #ffffff;
-      overflow-x: hidden;
-    }
-    h1, h2, .brand-font {
-      font-family: 'Syne', sans-serif;
-      letter-spacing: -0.02em;
-    }
-    .nova-n {
-      position: relative;
-      display: inline-block;
-    }
-    /* The Katipo Stripe on the 'N' */
-    .nova-n::after {
-      content: '';
-      position: absolute;
-      bottom: 10%;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background: #ff0000;
-      box-shadow: 0 0 15px #ff0000, 0 0 5px #ff0000;
-      transform: skewY(-5deg);
+      min-height: max(884px, 100dvh);
     }
   </style>
-<style data-purpose="hypergravity-interactions">
-    /* Hypergravity effect: Heavy feel with anti-gravity lift on hover */
-    .hypergravity-card {
-      transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.4s ease;
-      background: rgba(15, 15, 15, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-    }
-    .hypergravity-card:hover {
-      transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 30px 60px rgba(255, 0, 0, 0.15);
-      border-color: rgba(255, 0, 0, 0.3);
-    }
-    .nav-link {
-      position: relative;
-      transition: color 0.3s ease;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 1px;
-      bottom: -2px;
-      left: 0;
-      background-color: #ff0000;
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-  </style>
-<style data-purpose="canvas-overlay">
-    #spider-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 50;
-    }
-  </style>
-<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='black'/%3E%3Cpath d='M8 24V8l16 16V8' stroke='%23ff0000' stroke-width='4' fill='none' stroke-linecap='square'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/></head>
-<body class="bg-black text-white antialiased selection:bg-red-600">
-<!-- BEGIN: Navigation -->
-<nav class="fixed top-0 w-full z-[100] px-8 py-6 flex justify-between items-center mix-blend-difference">
-<div class="flex flex-col">
-<div class="text-3xl font-extrabold tracking-tighter brand-font">
-<span class="nova-n">n</span>ovaio<span class="text-red-600">.</span>digital
-      </div>
-<span class="text-[10px] tracking-[0.5em] uppercase opacity-60 mt-1 not-italic">ux + ui</span>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex h-screen w-full flex-col bg-background-dark dark overflow-hidden">
+<!-- Header -->
+<div class="flex items-center bg-transparent p-4 justify-between z-20">
+<div class="text-primary flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-4xl font-bold">contrast_square</span>
 </div>
-<div class="hidden md:flex gap-12 text-xs uppercase tracking-widest font-bold">
-<a class="nav-link" href="#work">Work</a>
-<a class="nav-link" href="#about">About</a>
-<a class="nav-link" href="#contact">Contact</a>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-full h-10 w-10 bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined">menu</span>
+</button>
 </div>
-</nav>
-<!-- END: Navigation -->
-<!-- BEGIN: Hero Section -->
-<main class="relative min-h-screen flex flex-col justify-center items-center px-6 pt-20">
-<!-- Decorative Kowhaiwhai Background Pattern (Subtle) -->
-<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPOt_i8MdmD5d4EvkKPRyBwcjJYtri9qMU7Q_nJQsCZThDcF7AI9TH7N2vTJB3LmoItflkCqwEDYz-4Mc01YUoleUUaUamVb_ml5ANSx_6GExHXPjmLzlkmOPOhL8X265anNaJI1tUr0Kp8v5iasEa30ggX2W3VTRxPor2MA6rbusMZhRLpq6_VIMWS8c5Nw6AOK3XGsvifsau68FlIpGr1aZ7pjyts_sZ5seheSBLOataEcxiBkYw4YjtXjDWA1UbCvvv7qHRVzY');"></div>
-<section class="text-center z-10 max-w-4xl" data-purpose="hero-content">
-<h2 class="text-5xl md:text-8xl font-black mb-6 leading-none">
-        ARCHITECTING<br/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-900">DIGITAL WEBS.</span>
-</h2>
-<p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-        High-end UX/UI design rooted in Māori heritage and cutting-edge technology. We create experiences that stick.
-      </p>
-<div class="mt-12 flex flex-wrap justify-center gap-6">
-<button class="hypergravity-card px-10 py-4 text-xs font-bold uppercase tracking-widest border border-red-600/30 text-white hover:bg-red-600 transition-all">
-          Explore Projects
-        </button>
-<button class="px-10 py-4 text-xs font-bold uppercase tracking-widest text-red-600 hover:text-white transition-all">
-          Our Philosophy
-        </button>
 </div>
-</section>
-<!-- Scroll Indicator -->
-<div class="absolute bottom-10 animate-bounce opacity-40">
-<div class="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
+<!-- Main Interactive Area -->
+<main class="flex-1 flex flex-col items-center justify-center relative px-6">
+<!-- Ambient Glows -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Central Typography -->
+<div class="text-center z-10 mb-12">
+<h1 class="text-white font-serif text-5xl md:text-6xl tracking-tight mb-2">
+                    novaio.digital
+                </h1>
+<p class="text-primary font-display uppercase tracking-[0.4em] text-sm font-bold">
+                    ux + ui
+                </p>
 </div>
+<!-- The Katipo Spider (Interactive Element) -->
+<div class="relative group cursor-pointer active:scale-95 transition-transform duration-300">
+<!-- Red kowhaiwhai trail effect (Visual representation) -->
+<div class="absolute -inset-20 bg-[radial-gradient(circle,rgba(236,91,19,0.15)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<!-- High Fidelity Katipo Body -->
+<div class="w-24 h-24 bg-zinc-950 rounded-full relative shadow-2xl border border-zinc-800 flex items-center justify-center spider-glow">
+<!-- The Iconic 'N' Stripe -->
+<div class="w-full h-full flex items-center justify-center overflow-hidden rounded-full">
+<span class="text-primary text-6xl font-black font-serif opacity-90 select-none">N</span>
+</div>
+<!-- Spider Legs (Simplified for high-fidelity feel) -->
+<div class="absolute -left-12 top-4 w-16 h-1 bg-zinc-900 -rotate-[30deg] rounded-full"></div>
+<div class="absolute -left-14 top-12 w-18 h-1 bg-zinc-900 rotate-0 rounded-full"></div>
+<div class="absolute -left-12 bottom-4 w-16 h-1 bg-zinc-900 rotate-[30deg] rounded-full"></div>
+<div class="absolute -right-12 top-4 w-16 h-1 bg-zinc-900 rotate-[30deg] rounded-full"></div>
+<div class="absolute -right-14 top-12 w-18 h-1 bg-zinc-900 rotate-0 rounded-full"></div>
+<div class="absolute -right-12 bottom-4 w-16 h-1 bg-zinc-900 -rotate-[30deg] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Avant-Garde Hint -->
+<div class="mt-16 text-zinc-500 text-[10px] uppercase tracking-[0.5em] animate-pulse">
+                Touch to Enter
+            </div>
 </main>
-<!-- END: Hero Section -->
-<!-- BEGIN: Featured Work -->
-<section class="py-32 px-8 bg-neutral-950 relative z-10" id="work">
-<div class="max-w-7xl mx-auto">
-<header class="mb-20">
-<h3 class="text-red-600 text-xs font-bold uppercase tracking-[0.4em] mb-4">Selected Works</h3>
-<h4 class="text-4xl md:text-6xl font-bold brand-font">PREMIUM OUTPUT.</h4>
-</header>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-<!-- Project 1 -->
-<article class="hypergravity-card group cursor-pointer overflow-hidden rounded-sm">
-<div class="aspect-video bg-neutral-900 relative">
-<img alt="Project 1" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz_FtcOTh8qqYIyPpfTI7DVJAMBhVc1Ao0WiuncdFuCHAEP9BzHro8UkGKuKhx997Arp-0HB-nAd87dtZZwGClucPheCI6A4cEw8VVX7HBEQXBw9jctQxf13kyQBHIXDp8lTAFes2aJsBC19vBGlriaPfO-ccCigo1QkdIDlha-_cAX3hkM_bjZCVGF0eLMuXMw8wBLTg5lXfOHZzDuj0UDPSriLozyPNZDhzrL8KIzDi9WZGMPHLYereroJzBniSCi9bXLnQIfWo"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+<!-- Navigation Section / Experience Links -->
+<div class="px-6 py-8 grid grid-cols-2 gap-4 z-10">
+<div class="p-4 bg-zinc-900/50 border border-zinc-800 rounded-xl backdrop-blur-sm">
+<p class="text-zinc-500 text-[10px] uppercase font-bold mb-1">Portfolio</p>
+<p class="text-white text-sm">View Selected Works</p>
 </div>
-<div class="p-8">
-<h5 class="text-2xl font-bold mb-2">Aotearoa Finance</h5>
-<p class="text-gray-500 text-sm uppercase tracking-widest">Web Application / Branding</p>
-</div>
-</article>
-<!-- Project 2 -->
-<article class="hypergravity-card group cursor-pointer overflow-hidden rounded-sm">
-<div class="aspect-video bg-neutral-900 relative">
-<img alt="Project 2" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiqTQDAc9YvKO9Pqak7vmB3zjjSo09OmLEZ5VfYZAsMWyAbZo6m5Py9PlDPq-h10QVO0CL50SorVIVS71SQbABFDqIgvN6-1pmaIPkIQivZ-O8WmVwkHSgUYUvsCdoP7kwx3m6aWQODL0T87zF7pHLK6VsLTty09ZDQU8UsiOOX-GkHksBX1l_Vh1d4cit-BLVDTirM0c2PzLEr37Iy4rwfIJDkAk1bw7O9E77HbGAyIq6DDxQ8LTqiFQvu53IUwrrE8HfFEOvvWk"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
-</div>
-<div class="p-8">
-<h5 class="text-2xl font-bold mb-2">Te Kore Fashion</h5>
-<p class="text-gray-500 text-sm uppercase tracking-widest">E-Commerce / UX Strategy</p>
-</div>
-</article>
+<div class="p-4 bg-primary/10 border border-primary/20 rounded-xl backdrop-blur-sm">
+<p class="text-primary text-[10px] uppercase font-bold mb-1">Contact</p>
+<p class="text-white text-sm">Start a Project</p>
 </div>
 </div>
-</section>
-<!-- END: Featured Work -->
-<!-- BEGIN: Katipo Canvas Interaction -->
-<canvas data-purpose="spider-animation-layer" id="spider-canvas"></canvas>
-<!-- END: Katipo Canvas Interaction -->
-<!-- BEGIN: Footer -->
-<footer class="py-20 px-8 border-t border-white/5 bg-black relative z-10">
-<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-<div>
-<div class="text-2xl font-bold brand-font mb-2">novaio.digital</div>
-<p class="text-gray-600 text-sm">© 2024. All Rights Reserved. Based in Aotearoa.</p>
+<!-- BottomNavBar -->
+<div class="flex gap-2 border-t border-zinc-800 bg-zinc-950/80 backdrop-blur-lg px-4 pb-8 pt-2 z-20">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">home</span>
 </div>
-<div class="flex gap-8 text-xs font-bold uppercase tracking-widest">
-<a class="hover:text-red-600" href="#">Twitter</a>
-<a class="hover:text-red-600" href="#">Behance</a>
-<a class="hover:text-red-600" href="#">Instagram</a>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-zinc-500" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">grid_view</span>
 </div>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-zinc-500" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">auto_awesome</span>
 </div>
-</footer>
-<!-- END: Footer -->
-<script data-purpose="spider-logic">/**
-     * Katipo Spider Animation Script
-     * Features: Realistic scurrying, cursor reaction, and red kowhaiwhai trails.
-     */
-    const canvas = document.getElementById('spider-canvas');
-    const ctx = canvas.getContext('2d');
-
-    let width, height;
-    let spider = {
-      x: -50,
-      y: -50,
-      targetX: 200,
-      targetY: 200,
-      angle: 0,
-      speed: 2,
-      size: 15,
-      legs: [],
-      trail: []
-    };
-
-    let mouse = { x: 0, y: 0 };
-    let frameCount = 0;
-
-    function resize() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    }
-
-    window.addEventListener('resize', resize);
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-      if(Math.random() > 0.95) {
-        spider.targetX = mouse.x;
-        spider.targetY = mouse.y;
-      }
-    });
-
-    resize();
-
-    spider.x = width / 2;
-    spider.y = height / 2;
-
-    function drawKowhaiwhaiTrail() {
-      if (spider.trail.length < 2) return;
-      
-      ctx.strokeStyle = 'rgba(255, 0, 0, 0.4)';
-      ctx.lineWidth = 2;
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
-      
-      ctx.beginPath();
-      ctx.moveTo(spider.trail[0].x, spider.trail[0].y);
-      
-      for(let i = 1; i < spider.trail.length; i++) {
-        const p = spider.trail[i];
-        const prev = spider.trail[i-1];
-        const cp1x = prev.x + (p.x - prev.x) / 2 + Math.sin(i * 0.5) * 10;
-        const cp1y = prev.y + (p.y - prev.y) / 2 + Math.cos(i * 0.5) * 10;
-        ctx.quadraticCurveTo(cp1x, cp1y, p.x, p.y);
-      }
-      ctx.stroke();
-    }
-
-    function drawSpider() {
-      ctx.save();
-      ctx.translate(spider.x, spider.y);
-      ctx.rotate(spider.angle);
-
-      // Realistic Shadow
-      ctx.fillStyle = 'rgba(0,0,0,0.7)';
-      ctx.beginPath();
-      ctx.ellipse(8, 8, spider.size * 1.3, spider.size * 0.9, 0, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Body Glow
-      const glow = ctx.createRadialGradient(0, 0, 0, 0, 0, spider.size * 2);
-      glow.addColorStop(0, 'rgba(255, 0, 0, 0.4)');
-      glow.addColorStop(1, 'rgba(255, 0, 0, 0)');
-      ctx.fillStyle = glow;
-      ctx.beginPath();
-      ctx.arc(0, 0, spider.size * 2, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Body (The Katipo)
-      ctx.fillStyle = '#050505';
-      
-      // Abdomen
-      ctx.beginPath();
-      ctx.ellipse(0, 0, spider.size, spider.size * 0.85, 0, 0, Math.PI * 2);
-      ctx.fill();
-      
-      // Cephalothorax
-      ctx.beginPath();
-      ctx.ellipse(0, -spider.size * 0.8, spider.size * 0.6, spider.size * 0.5, 0, 0, Math.PI * 2);
-      ctx.fill();
-
-      // The 'N' Marking (Logo Representation)
-      ctx.strokeStyle = '#ff0000';
-      ctx.lineWidth = 3;
-      ctx.lineCap = 'square';
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = '#ff0000';
-      
-      ctx.beginPath();
-      const nSize = spider.size * 0.4;
-      ctx.moveTo(-nSize, nSize);
-      ctx.lineTo(-nSize, -nSize);
-      ctx.lineTo(nSize, nSize);
-      ctx.lineTo(nSize, -nSize);
-      ctx.stroke();
-      
-      ctx.shadowBlur = 0; // Reset shadow for legs
-
-      // Legs
-      ctx.strokeStyle = '#050505';
-      ctx.lineWidth = 2.5;
-      const legTime = Date.now() * 0.015;
-      for (let i = 0; i < 8; i++) {
-        const side = i < 4 ? 1 : -1;
-        const angleBase = (i % 4) * 0.5 - 0.75;
-        const legMovement = Math.sin(legTime + i) * 0.3;
-        
-        ctx.beginPath();
-        ctx.moveTo(0, -spider.size * 0.4);
-        ctx.quadraticCurveTo(
-          45 * side, (angleBase + legMovement) * 50,
-          55 * side, (angleBase + legMovement) * 60
-        );
-        ctx.stroke();
-      }
-
-      ctx.restore();
-    }
-
-    function update() {
-      const dx = spider.targetX - spider.x;
-      const dy = spider.targetY - spider.y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-
-      if (dist > 5) {
-        spider.angle = Math.atan2(dy, dx) + Math.PI/2;
-        spider.x += Math.cos(spider.angle - Math.PI/2) * spider.speed;
-        spider.y += Math.sin(spider.angle - Math.PI/2) * spider.speed;
-        
-        if (frameCount % 4 === 0) {
-          spider.trail.push({x: spider.x, y: spider.y});
-          if (spider.trail.length > 50) spider.trail.shift();
-        }
-      } else {
-        if(Math.random() > 0.98) {
-          spider.targetX = Math.random() * width;
-          spider.targetY = Math.random() * height;
-        }
-      }
-
-      const interactiveElements = document.querySelectorAll('.nav-link, button, article');
-      interactiveElements.forEach(el => {
-        if (!el.dataset.listenerSet) {
-          el.addEventListener('mouseenter', () => {
-            const rect = el.getBoundingClientRect();
-            spider.targetX = rect.left + rect.width / 2;
-            spider.targetY = rect.top + rect.height / 2;
-            spider.speed = 5;
-          });
-          el.addEventListener('mouseleave', () => {
-            spider.speed = 2;
-          });
-          el.dataset.listenerSet = 'true';
-        }
-      });
-    }
-
-    function loop() {
-      ctx.clearRect(0, 0, width, height);
-      frameCount++;
-      update();
-      drawKowhaiwhaiTrail();
-      drawSpider();
-      requestAnimationFrame(loop);
-    }
-
-    loop();</script>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-zinc-500" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</div>
+</a>
+</div>
+<!-- Subtle Pattern Overlay -->
+<div class="absolute inset-0 kowhaiwhai-pattern pointer-events-none"></div>
+</div>
 </body></html>
