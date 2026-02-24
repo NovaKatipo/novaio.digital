@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NovaIO - Mobile Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#0a0a0a", // Deep black for textured feel
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    boxShadow: {
+                        'hyper': '0 20px 50px -12px rgba(0, 0, 0, 0.5)',
+                        'gravity': '0 -10px 40px rgba(236, 91, 19, 0.15)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .textured-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(236, 91, 19, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .anti-gravity {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+        .anti-gravity:active {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden textured-bg">
+<!-- Header / Nav -->
+<header class="sticky top-0 z-50 flex items-center justify-between bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 border-b border-slate-200 dark:border-primary/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">deployed_code</span>
+<h1 class="text-xl font-extrabold tracking-tighter uppercase">NovaIO</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-bold tracking-widest text-primary/60 uppercase">ux + ui</span>
+<button class="flex size-10 items-center justify-center rounded-full bg-slate-100 dark:bg-primary/10">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">menu</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative px-4 py-8">
+<div class="overflow-hidden rounded-xl bg-slate-200 dark:bg-zinc-900 shadow-hyper anti-gravity">
+<div class="aspect-[4/5] w-full bg-cover bg-center flex flex-col justify-end p-6" data-alt="Abstract geometric shapes floating in dark void" style="background-image: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0) 60%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwAGhVFH_pHHOw4xGXUQuc4yThOYW0drJZhpB_wTob0bz27cReJpYuxEB61sgowTkQOWEpCgqvFilA0F3ewNEifxqoZSVN4jYtC0rQ8Nq1AtcpZuGVtYHghmWIfra4Cpp4Cpo0I8Yz7AGkG5_8AY5S_aWbn7G5BklZHvYQHxKZlF1kMhRdD06N_ONBl5npTOkO0B398zX0UAnz6c67OYZOAACoRuhtpnmAW3vPETcwFctE3V-aisEQ6cS1_qN2bpwhRcIyxWfwRAA');">
+<h2 class="text-4xl font-black text-white leading-tight">Hypergravity<br/>Design</h2>
+<p class="mt-2 text-primary font-bold tracking-wide">EST. 2024</p>
+</div>
+</div>
+</section>
+<!-- Whakapapa Section -->
+<section class="px-6 py-12" id="whakapapa">
+<div class="flex items-center gap-3 mb-6">
+<div class="h-px flex-1 bg-slate-200 dark:bg-primary/20"></div>
+<h3 class="text-sm font-black tracking-[0.3em] uppercase text-primary">Whakapapa</h3>
+<div class="h-px w-8 bg-slate-200 dark:bg-primary/20"></div>
+</div>
+<div class="space-y-6">
+<p class="text-2xl font-light leading-relaxed text-slate-700 dark:text-slate-300">
+                    Exploring lineage and connection through <span class="font-bold text-slate-900 dark:text-white">clean typography</span> and weighted depth.
+                </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-lg bg-white dark:bg-zinc-900 shadow-xl border-l-4 border-primary anti-gravity">
+<span class="material-symbols-outlined text-primary mb-2">account_tree</span>
+<h4 class="font-bold text-sm uppercase">Ancestry</h4>
+<p class="text-xs opacity-60 mt-1">Foundational roots of visual systems.</p>
+</div>
+<div class="p-4 rounded-lg bg-white dark:bg-zinc-900 shadow-xl border-l-4 border-primary anti-gravity">
+<span class="material-symbols-outlined text-primary mb-2">hub</span>
+<h4 class="font-bold text-sm uppercase">Connection</h4>
+<p class="text-xs opacity-60 mt-1">The glue between interaction and form.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Marae Section -->
+<section class="bg-slate-100 dark:bg-zinc-900/50 py-16 px-6 relative overflow-hidden" id="marae">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]">meeting_room</span>
+</div>
+<h3 class="text-sm font-black tracking-[0.3em] uppercase text-primary mb-8 text-center">Marae</h3>
+<div class="bg-white dark:bg-black p-8 rounded-2xl shadow-hyper relative z-10 border border-slate-200 dark:border-primary/5 anti-gravity">
+<p class="text-lg leading-relaxed mb-6">
+                    A digital meeting place designed for community focus. Our Marae represents the core of the NovaIO interface—where users congregate and experiences are shared.
+                </p>
+<div class="flex items-center justify-between pt-6 border-t border-slate-100 dark:border-primary/10">
+<div class="flex -space-x-3">
+<div class="size-10 rounded-full border-2 border-background-dark bg-slate-400"></div>
+<div class="size-10 rounded-full border-2 border-background-dark bg-slate-500"></div>
+<div class="size-10 rounded-full border-2 border-background-dark bg-slate-600"></div>
+<div class="size-10 rounded-full border-2 border-background-dark bg-primary flex items-center justify-center text-white text-xs font-bold">+12</div>
+</div>
+<button class="text-primary font-bold flex items-center gap-1">
+                        Enter Room <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="px-4 py-16" id="gallery">
+<h3 class="text-sm font-black tracking-[0.3em] uppercase text-primary mb-8 text-center">Visual Lab</h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="aspect-square rounded-xl bg-slate-200 overflow-hidden shadow-lg anti-gravity">
+<img alt="abstract" class="h-full w-full object-cover" data-alt="Dark abstract architectural detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2qhZnRZ3Ke8qOqlBiGcc0kANB8S_sKzt_ukFkZ-Lhj2M5H4j3jQ8l579JXKAt6iHRDbcze_CPxlcH25UY5jE5GXTDBO_4uueZr7OFqQUGdxCj19jf2FXrVhLLmBwDtAsJ3PbFwy591AqvdOpzim6STtTQh2lNmxaV2MzvAzhnp8QobJ8qEqEfXH_z56lDnOyC-XFeOD0P8bpC6Ap3kpoWWE3lwmtZ68626C71cp3vP3qL7MT4Tv72Lj_U5rLs3HjJlKkPqOJorSY"/>
+</div>
+<div class="aspect-square rounded-xl bg-slate-200 overflow-hidden shadow-lg translate-y-6 anti-gravity">
+<img alt="abstract" class="h-full w-full object-cover" data-alt="Orange and black fluid gradient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpYZhMk7LtbgPZ--phh-eItApPfI0QmdVkzI2Jmqu4owG9pHY61kWqvJjLk4xwZSRA5BTagl6cveInMPT88gPQLPB0wu8i1yhWYLDee_F9ma6jqQuAZJtgD0FUuSAxpeEZmcP83_0FhiG2ApRTVGGzP5xZuBDAEAA6T3zvl_xxBIVf7XM5-58DZUdYcrnDr_sSSSMmk7sy7r4q49mYcOptAfO730_KHchPgGey6aJ4iIw9-Y567tjL2nVelWRLWzbaoSlIaW8cTmU"/>
+</div>
+<div class="aspect-square rounded-xl bg-slate-200 overflow-hidden shadow-lg anti-gravity">
+<img alt="abstract" class="h-full w-full object-cover" data-alt="Floating obsidian-like 3D shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGi1usYumFKWEU5hcgtUVUMXh8zMinhj9w5Fsq47hb_pCZZ26ud4fy5s9jl6AdplQtzQazfrFrkvlCqkrTmI7C7HMx-ClVMSGyFZPspY1YxyTMEkhFEaDaPx_07DQGrK6sjF1I1yJA2BX1f5FsX2xhUZaPPKylHdF-LVqVTs6Xmj0apWgnqLyDkb_k6iQNm5r16w6j3MrBpYl2QG89oMR_tQx0YRyS5M6bP_S4McK1Hvb05X-aapI_CPyGLR-czxL3X7GFczNMHLE"/>
+</div>
+<div class="aspect-square rounded-xl bg-slate-200 overflow-hidden shadow-lg translate-y-6 anti-gravity">
+<img alt="abstract" class="h-full w-full object-cover" data-alt="Vibrant orange sunrise abstract gradient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZNaqDiv4LoHdDRPPxNvCQTxgAQBvB_yV-vKcRXEKptTtb69XqmgYsn8CzGu8pX7mBDaYROTMoFW7LI5vsQqW1QNgyy8WRlLNZk69MWXsWPIsiz85HZccGefgWM1qDihplaiiuP3fU2jrdXnt0hQ-z06UABo02gs3KUXIiH2TAvqqXQfdniwZ6jSb53zHRP7lsyy39TcLbi2JjOs7vkHWTYKvQS9g1OncVZYqnnBDCO2xon_8fhlSDD1Lv2fXliIdwMnleZN80x_A"/>
+</div>
+</div>
+<div class="h-12"></div>
+</section>
+<!-- Contact Section -->
+<section class="px-6 py-20 bg-primary text-white rounded-t-[3rem] shadow-gravity" id="contact">
+<h3 class="text-sm font-black tracking-[0.3em] uppercase opacity-80 mb-4">Contact</h3>
+<h2 class="text-4xl font-extrabold mb-8 tracking-tighter">Let's build<br/>the gravity.</h2>
+<form class="space-y-4" onsubmit="return false;">
+<div>
+<input class="w-full bg-white/10 border-white/20 rounded-xl py-4 px-6 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/50 focus:border-transparent outline-none" placeholder="Your Name" type="text"/>
+</div>
+<div>
+<input class="w-full bg-white/10 border-white/20 rounded-xl py-4 px-6 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/50 focus:border-transparent outline-none" placeholder="Email Address" type="email"/>
+</div>
+<button class="w-full bg-white text-primary font-black py-5 rounded-xl uppercase tracking-widest shadow-xl anti-gravity">
+                    Send Signal
+                </button>
+</form>
+<div class="mt-12 flex justify-between items-end">
+<div class="space-y-1">
+<p class="text-xs uppercase font-bold opacity-70">Auckland, NZ</p>
+<p class="text-lg font-bold">nova@io.studio</p>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined">language</span>
+<span class="material-symbols-outlined">share</span>
+</div>
+</div>
+</section>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-[100] bg-background-light/90 dark:bg-background-dark/95 backdrop-blur-xl border-t border-slate-200 dark:border-primary/20 px-6 pb-6 pt-3 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">home</span>
+<span class="text-[10px] font-black uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#whakapapa">
+<span class="material-symbols-outlined">schema</span>
+<span class="text-[10px] font-black uppercase tracking-tighter">Roots</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#gallery">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-black uppercase tracking-tighter">Lab</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#contact">
+<span class="material-symbols-outlined">send</span>
+<span class="text-[10px] font-black uppercase tracking-tighter">Mail</span>
+</a>
+</nav>
+<!-- Extra spacing for bottom nav -->
+<div class="h-24 bg-primary"></div>
+</div>
+</body></html>
